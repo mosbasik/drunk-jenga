@@ -1,0 +1,41 @@
+title: Chuck Barber
+description:
+tiles:
+    - name: Give 2 and Redo
+      text: Give 2 then pull again.
+    - name: Take 2 and Redo
+      text: Take 2 then pull again.
+    - name: Tequila Threat
+      text: Do 20 shots of tequila or drink 3.
+    - name: Million Dollar Threat
+      text: Give one person $1,000,000 or give them 4 drinks.
+    - name: Shaved Head Threat
+      text: Shave your head or drink 4.
+    - name: Beer Wench
+      text: You are the Beer Wench. [You must fetch new drinks for all players the rest of the game.]
+    - name: Bipolar
+      text: You must insult the person to your right, then compliment the person to your left.
+    - name: Trebek
+      text: Any time you sing the Jeopardy theme song, the person taking their turn must complete their turn before you finish the song.
+    - name: Weezie Threat
+      text: Give 10 reasons why Weezie was smarter than George Jefferson or drink 4.
+    - name: Strawberry Shortcake
+      text: Give 1 for every Strawberry Shortcake character you can name, plus anyone named Chuck drinks 4.
+    - name: CJ's Rule
+      text: Play the rest of the game under the table.
+    - name: Name Genie
+      text: Give all players  a new name.  All players must use the new names, or drink 1 every time they fail.
+    - name: Castaway
+      text: You can only talk to inanimate objects (not people) for the rest of the game.
+    - name: Hillbilly Race
+      text: The last person to switch their socks to their opposite feet must play without shoes or socks and becomes The Hillbilly for the rest of the game.
+    - name: Bob Dole
+      text: You must refer to yourself in the third person for the rest of the game.
+    - name: Battle of the Sexes 2
+      text: Everyone with gender opposite yours must drink 2.
+    - name: Thumb Master
+      text: You are the Thumb Master [no explanation]
+    - name: Rainbow Warrior
+      text: Pick a color.  Everyone must drink 1 for every article of clothing they have on that contains that color.
+    - name: Screw the NFL Kicker
+      text: Drink 1 for every letter in your last name.
