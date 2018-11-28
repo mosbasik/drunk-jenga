@@ -7,9 +7,11 @@ import random
 
 TILES_DIR = "tiles"
 TILES_PER_GAME = 54
+CHECK_START = 264
 
 
 def main():
+    # check_tiles("tiles/tiles.json")
     available_tiles = load_tiles_from_directory(TILES_DIR)
     while True:
         user_input = input(
@@ -36,6 +38,18 @@ def load_tiles_from_directory(directory):
                 tiles.append(tile)
     print(f"Found {len(tiles)} tiles in '{directory}'")
     return tiles
+
+
+def check_tiles(tiles_file_path):
+    with open(tiles_file_path) as f:
+        tiles_list = json.load(f)
+        for i, tile in enumerate(tiles_list[CHECK_START:], start=CHECK_START):
+            print("")
+            print(f"Tile {i}:")
+            print(tile[0])
+            print(tile[1])
+            print("")
+            input("Press ENTER to continue... ")
 
 
 def start_game(available_tiles):
