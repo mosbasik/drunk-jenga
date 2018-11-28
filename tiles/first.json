@@ -2,46 +2,30 @@
     "edition": "First",
     "source": "http://www.connactivity.com/~csniezek/Jenga/Edition1.html",
     "tiles": [
-        [4, "Give 1", "Give 1 drink."],
-        [4, "Give 2", "Give 2 drinks."],
-        [4, "Give 3", "Give 3 drinks."],
-        [4, "Give 4", "Give 4 drinks."],
-        [4, "Take 1", "Take 1 drink."],
-        [4, "Take 2", "Take 2 drinks."],
-        [4, "Take 3", "Take 3 drinks."],
-        [4, "Take 4", "Take 4 drinks."],
-        [4, "Make Rule", "Make a rule."],
-        [2, "Strip 1", "Remove 1 article of clothing."],
-        [2, "Social", "Everyone playing takes a drink."],
-        [
-            1,
-            "Waterfall",
-            "Everyone drinks until the person next to them stops."
-        ],
-        [1, "Categories", "Categories for 2 minutes.  Drink while you think."],
-        [
-            1,
-            "Sue Rule",
-            "Drink once for every word you say until the end of the game."
-        ],
-        [1, "Casanova", "Kiss the person to your right."],
-        [1, "Bottoms Up!", "Everyone except you must finish their drink :("],
-        [
-            1,
-            "Hand Switch",
-            "Pick someone to play with their opposite hand for the rest of the game."
-        ],
-        [1, "Southpaw", "Everyone must pull pieces with their left hand only."],
-        [1, "Down the Hatch", "Finish your drink! :("],
-        [1, "Impression", "Do your best impression of someone at the table."],
-        [1, "Peer Pressure", "Drink 1 drink for each person playing the game."],
-        [1, "Buzz", "Buzz for 2 minutes. Drink while you think."],
-        [1, "Eye for an Eye", "Every time you give a drink, you take a drink."],
-        [1, "Kiss Phil", "Kiss Phil (or appropriate substitute)."],
-        [
-            1,
-            "Santa",
-            "The next person must take their turn sitting on your lap."
-        ]
+        [4, "Give 1"],
+        [4, "Give 2"],
+        [4, "Give 3"],
+        [4, "Give 4"],
+        [4, "Take 1"],
+        [4, "Take 2"],
+        [4, "Take 3"],
+        [4, "Take 4"],
+        [4, "Make Rule"],
+        [2, "Strip 1"],
+        [2, "Social"],
+        [1, "Waterfall"],
+        [1, "Categories"],
+        [1, "Sue Rule"],
+        [1, "Casanova"],
+        [1, "Bottoms Up"],
+        [1, "Southpaw"],
+        [1, "Hand Switch"],
+        [1, "Down the Hatch"],
+        [1, "Impression"],
+        [1, "Peer Pressure"],
+        [1, "Buzz"],
+        [1, "Eye for an Eye"],
+        [1, "Kiss Phil"],
+        [1, "Santa"]
     ]
 }
