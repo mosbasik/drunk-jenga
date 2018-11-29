@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- themed boostrap -->
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sketchy/bootstrap.min.css" />
+
+        <!-- bootstrap-vue -->
+        <link type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.min.css" />
+
+        <title>Drunk Jenga</title>
+    </head>
+    <body>
+        <div id="app" class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h1 class="display-3">Drunk Jenga</h1>
+                    <p>A browser-based implementation of <a href="http://www.connactivity.com/~csniezek/Jenga/">Glahefriends' Drinking Jenga</a>.</p>
+                    <b-tabs pills fill>
+                        <b-form-group label="List of tile sets"><b-form-radio-group v-model="selectedGameName" v-bind:options="gameNames" stacked name="radiosStacked"></b-form-radio-group></b-form-group>
+                        <b-tab title="Select/Customize Game" active>
+                            <h2>Tiles</h2>
+                            <ul>
+                                <li v-for="tile in tiles">
+                                    {{ tile[0] }} - <span class="text-muted">{{ tile[1] }}</span>
+                                </li>
+                            </ul>
+                        </b-tab>
+                        <b-tab title="Play Game">
+                            <h2>Game</h2>
+                            <button type="button" class="btn btn-primary" v-on:click="initializeGame('First')">Initialize Game</button>
+                            <ol>
+                                <li v-for="tile in activeGame">
+                                    {{ tile[0] }} - <span class="text-muted">{{ tile[1] }}</span>
+                                </li>
+                            </ol>
+                        </b-tab>
+                    </b-tabs>
+                </div>
+            </div>
+        </div>
+
+        <!-- for sane data structures -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js" defer></script>
+
+        <!-- for AJAX requests -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.js" defer></script>
+
+        <!-- for Vue.js -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js" defer></script>
+
+        <!-- for boostrap-vue -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/babel-polyfill@6.26.0/lib/index.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.js" defer></script>
+
+        <!-- for application logic -->
+        <script type="text/javascript" src="main.js" defer></script>
+    </body>
+</html>
