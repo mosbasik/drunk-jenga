@@ -18,38 +18,39 @@ var vm = new Vue({
         initializeGame() {
             this.activeGame = [];
             for (var multiTile of this.games[this.selectedGameName].tiles) {
-                console.log(`multiTile: ${multiTile}`);
                 var masterTile = _.find(this.tiles, function(t) {
                     return t[0] === multiTile[1];
                 });
-                console.log(`masterTile: ${masterTile}`);
                 for (var i = multiTile[0]; i > 0; i -= 1) {
-                    console.log("push");
                     this.activeGame.push(masterTile);
                 }
             }
             this.activeGame = _.shuffle(this.activeGame);
-            console.log("Game initialized!");
         }
     },
 
     mounted: function() {
         axios
-            .get("tiles.json")
-            .then(response => {
-                this.tiles = response.data;
-            })
+            // make two requests for the default tiles and games data
+            .all([axios.get("tiles.json"), axios.get("games.json")])
+            .then(
+                // if both requests succeed
+                axios.spread((tiles_resp, games_resp) => {
+                    // save results of both requests into the data object
+                    this.tiles = tiles_resp.data;
+                    this.games = games_resp.data;
+                    // initialize first tile-number mapping using the default game
+                    this.initializeGame();
+                })
+            )
             .catch(error => {
-                console.log("Failed to load default tiles.");
+                // if one of the requests fails
+                console.log(error);
             });
 
-        axios
-            .get("games.json")
-            .then(response => {
-                this.games = response.data;
-            })
-            .catch(error => {
-                console.log("Failed to load default games.");
-            });
+        // re-initialize tile-number mapping if selected game name changes
+        var unwatchSelectedGameName = this.$watch("selectedGameName", (o, n) => {
+            this.initializeGame();
+        });
     }
 });

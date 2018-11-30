@@ -20,24 +20,30 @@
                 <div class="col-sm">
                     <h1 class="display-3">Drunk Jenga</h1>
                     <p>A browser-based implementation of <a href="http://www.connactivity.com/~csniezek/Jenga/">Glahefriends' Drinking Jenga</a>.</p>
-                    <b-tabs pills fill>
-                        <b-form-group label="List of tile sets"><b-form-radio-group v-model="selectedGameName" v-bind:options="gameNames" stacked name="radiosStacked"></b-form-radio-group></b-form-group>
-                        <b-tab title="Select/Customize Game" active>
-                            <h2>Tiles</h2>
+                    <b-tabs fill>
+                        <b-tab title="Play Game" active>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <h2>List of Tile Sets</h2>
+                                    <b-form-group label=""><b-form-radio-group v-model="selectedGameName" v-bind:options="gameNames" stacked name="radiosStacked"></b-form-radio-group></b-form-group>
+                                    <!-- <button type="button" class="btn btn-primary" v-on:click="initializeGame('First')">Initialize Game</button> -->
+                                </div>
+                                <div class="col-sm">
+                                    <h2>Tile-Number Mapping</h2>
+                                    <ol>
+                                        <li v-for="tile in activeGame">
+                                            {{ tile[0] }} - <span class="text-muted">{{ tile[1] }}</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </b-tab>
+                        <b-tab title="Full Tile List">
                             <ul>
                                 <li v-for="tile in tiles">
                                     {{ tile[0] }} - <span class="text-muted">{{ tile[1] }}</span>
                                 </li>
                             </ul>
-                        </b-tab>
-                        <b-tab title="Play Game">
-                            <h2>Game</h2>
-                            <button type="button" class="btn btn-primary" v-on:click="initializeGame('First')">Initialize Game</button>
-                            <ol>
-                                <li v-for="tile in activeGame">
-                                    {{ tile[0] }} - <span class="text-muted">{{ tile[1] }}</span>
-                                </li>
-                            </ol>
                         </b-tab>
                     </b-tabs>
                 </div>
