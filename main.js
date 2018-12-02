@@ -5,34 +5,64 @@ var vm = new Vue({
         tiles: [], // initialized with the default tiles in tiles.json
         games: {}, // initialized with the default games in games.json
         selectedGameName: "First",
-        activeGame: []
+        selectedGame: [],
+        tileQuery: null,
+        tileQueryIsComplete: true,
+        selectedTile: {
+            title: "",
+            text: ""
+        }
     },
 
     computed: {
         gameNames() {
             return _.map(this.games, (v, k) => k);
+        },
+
+        tileQueryIsValid() {
+            return this.tileQuery >= 1 && this.tileQuery <= 54;
+        },
+
+        showTileCard() {
+            return this.tileQueryIsValid && this.tileQueryIsComplete;
         }
     },
 
     methods: {
         initializeGame() {
-            this.activeGame = [];
+            this.selectedGame = [];
             for (var multiTile of this.games[this.selectedGameName].tiles) {
                 var masterTile = _.find(this.tiles, function(t) {
                     return t[0] === multiTile[1];
                 });
                 for (var i = multiTile[0]; i > 0; i -= 1) {
-                    this.activeGame.push(masterTile);
+                    this.selectedGame.push(masterTile);
                 }
             }
-            this.activeGame = _.shuffle(this.activeGame);
-        }
+            this.selectedGame = _.shuffle(this.selectedGame);
+        },
+
+        updateSelectedTile: _.debounce(function() {
+            this.tileQueryIsComplete = true;
+            if (this.tileQueryIsValid) {
+                this.selectedTile.title = this.selectedGame[this.tileQuery - 1][0];
+                this.selectedTile.text = this.selectedGame[this.tileQuery - 1][1];
+            } else {
+                this.selectedTile.title = "";
+                this.selectedTile.text = "";
+            }
+        }, 1000)
     },
 
     watch: {
         // re-initialize tile-number mapping if selected game name changes
         selectedGameName() {
             this.initializeGame();
+        },
+
+        tileQuery() {
+            this.tileQueryIsComplete = false;
+            this.updateSelectedTile();
         }
     },
 
