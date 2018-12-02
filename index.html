@@ -31,9 +31,8 @@
                                 <div class="col-sm-3"><label for="tile-query-input">Enter the number of the Jenga tile you drew (1-54):</label> <b-form-input id="tile-query-input" v-model="tileQuery" type="number" size="lg"></b-form-input></div>
                                 <div class="col-sm-5" v-if="showTileCard">
                                     <div class="card text-white bg-secondary mb-3">
-                                        <h3 class="card-header">Tile #{{ tileQuery }}</h3>
+                                        <h3 class="card-header">{{ selectedTile.title }}</h3>
                                         <div class="card-body">
-                                            <h4 class="card-title">{{ selectedTile.title }}</h4>
                                             <p class="card-text">{{ selectedTile.text }}</p>
                                         </div>
                                     </div>
