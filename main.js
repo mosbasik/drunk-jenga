@@ -29,6 +29,13 @@ var vm = new Vue({
         }
     },
 
+    watch: {
+        // re-initialize tile-number mapping if selected game name changes
+        selectedGameName() {
+            this.initializeGame();
+        }
+    },
+
     mounted: function() {
         axios
             // make two requests for the default tiles and games data
@@ -47,10 +54,5 @@ var vm = new Vue({
                 // if one of the requests fails
                 console.log(error);
             });
-
-        // re-initialize tile-number mapping if selected game name changes
-        var unwatchSelectedGameName = this.$watch("selectedGameName", (o, n) => {
-            this.initializeGame();
-        });
     }
 });
