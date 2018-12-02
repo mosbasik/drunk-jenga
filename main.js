@@ -35,6 +35,9 @@ var vm = new Vue({
                 var masterTile = _.find(this.tiles, function(t) {
                     return t[0] === multiTile[1];
                 });
+                if (masterTile === undefined) {
+                    console.warn(`Could not find tile with title "${multiTile[1]}" in tiles.json`);
+                }
                 for (var i = multiTile[0]; i > 0; i -= 1) {
                     this.selectedGame.push(masterTile);
                 }
