@@ -1,5 +1,5 @@
 {
-    "First": {
+    "First Edition": {
         "source": "http://www.connactivity.com/~csniezek/Jenga/Edition1.html",
         "tiles": [
             [4, "Give 1"],
@@ -29,7 +29,7 @@
             [1, "Santa"]
         ]
     },
-    "Second": {
+    "Second Edition": {
         "source": "http://www.connactivity.com/~csniezek/Jenga/Edition2.html",
         "tiles": [
             [2, "Give 1"],
@@ -64,7 +64,7 @@
             [1, "Southpaw"]
         ]
     },
-    "Chuck Barber": {
+    "Chuck Barber Edition": {
         "source": "http://www.connactivity.com/~csniezek/Jenga/EditionCB.html",
         "tiles": [
             [2, "Give 1"],
@@ -197,7 +197,7 @@
             [3, "Take 4"]
         ]
     },
-    "Beckie Condo": {
+    "Beckie Condo Edition": {
         "source": "http://www.connactivity.com/~csniezek/Jenga/EditionBC.html",
         "tiles": [
             [2, "Give 1"],
@@ -247,7 +247,7 @@
             [1, "CJ's Rule"]
         ]
     },
-    "Phil Cook": {
+    "Phil Cook Edition": {
         "source": "http://www.connactivity.com/~csniezek/Jenga/EditionPC.html",
         "tiles": [
             [3, "Give 1"],

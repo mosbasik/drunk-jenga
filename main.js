@@ -4,7 +4,7 @@ var vm = new Vue({
     data: {
         tiles: [], // initialized with the default tiles in tiles.json
         games: {}, // initialized with the default games in games.json
-        selectedGameName: "First",
+        selectedGameName: "First Edition",
         selectedGame: [],
         tileQuery: null,
         tileQueryIsComplete: true,
